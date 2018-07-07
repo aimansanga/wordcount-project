@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CountingPage</title>
+</head>
+<body>
+  <h1>There are {{ numberofwords }} words in your text</h1>
+
+  <a href="{% url 'home' %}">New Count</a>
+  
+  <h1>Your Text Is:</h1>
+  <p>{{ text }}</p>
+  <h1>Word Dictionary is below:</h1>
+
+  {% for word, frequency in sortedworddictionarylist %}
+    <p>{{ word }} - {{ frequency }}</p>
+  {% endfor %}
+</body>
+</html>
